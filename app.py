@@ -54,6 +54,7 @@ st.markdown("---")
 # ---------------------------------------------------------------------------
 with st.sidebar:
     st.markdown("## Your Startup Finances")
+    st.button("🔄 Update Results", use_container_width=True)
 
     st.markdown("### Cash & Revenue")
     current_cash = st.number_input(
@@ -61,14 +62,12 @@ with st.sidebar:
         value=500_000,
         min_value=0,
         step=10_000,
-        format="%d",
     )
     monthly_revenue = st.number_input(
         "Monthly revenue ($)",
         value=10_000,
         min_value=0,
         step=1_000,
-        format="%d",
     )
     revenue_growth_pct = st.number_input(
         "Monthly revenue growth rate (%)",
@@ -80,21 +79,21 @@ with st.sidebar:
     )
 
     st.markdown("### Monthly Burn (by category)")
-    salaries = st.number_input("Salaries & payroll ($)", value=30_000, min_value=0, step=1_000, format="%d")
-    office = st.number_input("Office/workspace ($)", value=3_000, min_value=0, step=500, format="%d")
-    software = st.number_input("Software & tools ($)", value=2_000, min_value=0, step=500, format="%d")
-    marketing = st.number_input("Marketing ($)", value=5_000, min_value=0, step=500, format="%d")
-    legal = st.number_input("Legal & accounting ($)", value=1_500, min_value=0, step=500, format="%d")
-    other = st.number_input("Other expenses ($)", value=2_000, min_value=0, step=500, format="%d")
+    salaries = st.number_input("Salaries & payroll ($)", value=30_000, min_value=0, step=1_000)
+    office = st.number_input("Office/workspace ($)", value=3_000, min_value=0, step=500)
+    software = st.number_input("Software & tools ($)", value=2_000, min_value=0, step=500)
+    marketing = st.number_input("Marketing ($)", value=5_000, min_value=0, step=500)
+    legal = st.number_input("Legal & accounting ($)", value=1_500, min_value=0, step=500)
+    other = st.number_input("Other expenses ($)", value=2_000, min_value=0, step=500)
 
     st.markdown("### Planned Hires")
     num_hires = st.number_input("Number of new hires", value=2, min_value=0, step=1)
-    avg_salary = st.number_input("Avg salary each ($/mo)", value=6_000, min_value=0, step=500, format="%d")
+    avg_salary = st.number_input("Avg salary each ($/mo)", value=6_000, min_value=0, step=500)
     hire_start_month = st.number_input("Start month", value=4, min_value=0, step=1)
 
     st.markdown("### One-time & Fundraising")
-    one_time = st.number_input("One-time expenses ($)", value=0, min_value=0, step=5_000, format="%d")
-    target_raise = st.number_input("Target raise amount ($)", value=0, min_value=0, step=50_000, format="%d")
+    one_time = st.number_input("One-time expenses ($)", value=0, min_value=0, step=5_000)
+    target_raise = st.number_input("Target raise amount ($)", value=0, min_value=0, step=50_000)
     close_month = st.number_input("Expected close month", value=0, min_value=0, step=1)
 
 # ---------------------------------------------------------------------------
